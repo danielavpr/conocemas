@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">ConoceMas</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+
+    <!-- Navigation Drawer menu labels -->
+    <string name="nav_home">Mapa</string>
+    <string name="nav_profile">Perfil</string>
+    <string name="nav_trips">Viajes</string>
+    <string name="nav_configuration">Configuracion</string>
+    <string name="nav_help">Ayuda</string>
+
+    <!-- Toolbar titles when navigation menu item is selected -->
+    <string-array name="nav_item_activity_titles">
+        <item>Mapa</item>
+        <item>Perfil</item>
+        <item>Viajes</item>
+        <item>Configuración</item>
+        <item>Ayuda</item>
+    </string-array>
+
+    <string name="log_out">Salir</string>
+    <string name="action_logout">Logout</string>
+    <string name="hello_blank_fragment">Holis :3</string>
+</resources>
