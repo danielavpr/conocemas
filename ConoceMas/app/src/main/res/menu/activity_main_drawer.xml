@@ -4,19 +4,24 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
+            android:icon="@drawable/map"
             android:title="@string/nav_home" />
         <item
             android:id="@+id/nav_profile"
+            android:icon="@drawable/profile"
             android:title="@string/nav_profile" />
         <item
             android:id="@+id/nav_trips"
+            android:icon="@drawable/trips"
             android:title="@string/nav_trips" />
 
         <item
             android:id="@+id/nav_configuration"
+            android:icon="@drawable/settings"
             android:title="@string/nav_configuration" />
         <item
             android:id="@+id/nav_help"
+            android:icon="@drawable/help"
             android:title="@string/nav_help" />
     </group>
 </menu>
