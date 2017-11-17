@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -19,13 +18,13 @@ import android.view.View;
 import android.widget.Toast;
 
 import salle.com.conocemas.R;
-import salle.com.conocemas.fragment.ConfigurationFragment;
+import salle.com.conocemas.fragment.SettingsFragment;
 import salle.com.conocemas.fragment.HelpFragment;
 import salle.com.conocemas.fragment.ProfileFragment;
 import salle.com.conocemas.fragment.TripsFragment;
 
 public class MainActivity extends AppCompatActivity implements
-    ConfigurationFragment.OnFragmentInteractionListener,
+    SettingsFragment.OnFragmentInteractionListener,
     HelpFragment.OnFragmentInteractionListener,
     ProfileFragment.OnFragmentInteractionListener,
     TripsFragment.OnFragmentInteractionListener{
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements
     private static final String TAG_HOME="home";
     private static final String TAG_PROFILE = "profile";
     private static final String TAG_TRIPS = "trips";
-    private static final String TAG_CONFIGURATION = "configuration";
+    private static final String TAG_SETTINGS = "settings";
     private static final String TAG_HELP = "help";
     public static String CURRENT_TAG = TAG_HOME;
 
@@ -119,19 +118,19 @@ public class MainActivity extends AppCompatActivity implements
 
     private Fragment getHomeFragment() {
         switch (navItemIndex) {
-            case 0:
+            case 1:
                 // Profile
                 ProfileFragment profileFragment = new ProfileFragment();
                 return profileFragment;
-            case 1:
+            case 2:
                 // Trips
                 TripsFragment tripsFragment = new TripsFragment();
                 return tripsFragment;
-            case 2:
-                // Configuration
-                ConfigurationFragment configurationFragment = new ConfigurationFragment();
-                return configurationFragment;
             case 3:
+                // Settings
+                SettingsFragment settingsFragment = new SettingsFragment();
+                return settingsFragment;
+            case 4:
                 // Help
                 HelpFragment helpFragment = new HelpFragment();
                 return helpFragment;
@@ -160,8 +159,10 @@ public class MainActivity extends AppCompatActivity implements
                     //Replacing the main content with ContentFragment Which is our Inbox View;
                     case R.id.nav_home:
                         navItemIndex = 0;
-                        CURRENT_TAG = TAG_HOME;
-                        break;
+                        // launch new intent instead of loading fragment
+                        startActivity(new Intent(MainActivity.this, MapsActivity.class));
+                        drawer.closeDrawers();
+                        return true;
                     case R.id.nav_profile:
                         navItemIndex = 1;
                         CURRENT_TAG = TAG_PROFILE;
@@ -170,12 +171,12 @@ public class MainActivity extends AppCompatActivity implements
                         navItemIndex = 2;
                         CURRENT_TAG = TAG_TRIPS;
                         break;
-                    case R.id.nav_configuration:
+                    case R.id.nav_settings:
                         navItemIndex = 3;
-                        CURRENT_TAG = TAG_CONFIGURATION;
+                        CURRENT_TAG = TAG_SETTINGS;
                         break;
                     case R.id.nav_help:
-                        navItemIndex = 3;
+                        navItemIndex = 4;
                         CURRENT_TAG = TAG_HELP;
                         break;
                     default:

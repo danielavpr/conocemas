@@ -10,7 +10,7 @@
     <string name="nav_home">Mapa</string>
     <string name="nav_profile">Perfil</string>
     <string name="nav_trips">Viajes</string>
-    <string name="nav_configuration">Configuracion</string>
+    <string name="nav_settings">Configuracion</string>
     <string name="nav_help">Ayuda</string>
 
     <!-- Toolbar titles when navigation menu item is selected -->
@@ -25,4 +25,5 @@
     <string name="log_out">Salir</string>
     <string name="action_logout">Logout</string>
     <string name="hello_blank_fragment">Holis :3</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
