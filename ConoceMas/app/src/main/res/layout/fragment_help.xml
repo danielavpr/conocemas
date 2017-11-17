@@ -1,13 +1,35 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="salle.com.conocemas.fragment.HelpFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="@string/help_fragment_message"
+        android:gravity="center"
+        android:layout_weight="1"
+        style="@style/message_title"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/question"
+        android:layout_weight="1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/help_fragment_contact_us"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_weight="1"
+        style="@style/message_details"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/help_fragment_email"
+        android:gravity="center|top"
+        android:layout_weight="1"
+        style="@style/message_details_accent"/>
 
-</FrameLayout>
+</LinearLayout>

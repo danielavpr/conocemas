@@ -26,4 +26,9 @@
     <string name="action_logout">Logout</string>
     <string name="hello_blank_fragment">Holis :3</string>
     <string name="title_activity_maps">Map</string>
+
+    <!-- Help Fragment -->
+    <string name="help_fragment_message">¿Tienes algún problema?</string>
+    <string name="help_fragment_contact_us">contáctanos en</string>
+    <string name="help_fragment_email">ayuda@conocemas.com</string>
 </resources>
