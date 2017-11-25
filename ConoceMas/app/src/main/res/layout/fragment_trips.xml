@@ -3,11 +3,670 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="salle.com.conocemas.fragment.TripsFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Cardview to trips -->
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/event_card_margin"
+                android:backgroundTint="@color/colorBackground"
+                card_view:cardElevation="8dp">
+                <!-- Card content -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- Trip details -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <!-- User -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_marginTop="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/user"/>
+                            <TextView
+                                android:id="@+id/txv_user_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="Usuario guapo"
+                                />
+                        </LinearLayout>
+                        <!-- Date -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/date" />
+                            <TextView
+                                android:id="@+id/txv_date_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="01/Dic/2017" />
+                        </LinearLayout>
+                        <!-- Time -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="4"
+                                android:src="@drawable/time"/>
+                            <TextView
+                                android:id="@+id/txv_time_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="09:00 a.m."
+                                />
+                        </LinearLayout>
+                        <!-- Event location -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="@dimen/event_details_margin">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/location" />
+                            <TextView
+                                android:id="@+id/txv_location_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="Parque Panorama"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <!-- Cardview to trips -->
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/event_card_margin"
+                android:backgroundTint="@color/colorBackground"
+                card_view:cardElevation="8dp">
+                <!-- Card content -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- Trip details -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <!-- User -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_marginTop="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/user"/>
+                            <TextView
+                                android:id="@+id/txv_user_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="Usuario guapo"
+                                />
+                        </LinearLayout>
+                        <!-- Date -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/date" />
+                            <TextView
+                                android:id="@+id/txv_date_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="01/Dic/2017" />
+                        </LinearLayout>
+                        <!-- Time -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="4"
+                                android:src="@drawable/time"/>
+                            <TextView
+                                android:id="@+id/txv_time_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="09:00 a.m."
+                                />
+                        </LinearLayout>
+                        <!-- Event location -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="@dimen/event_details_margin">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/location" />
+                            <TextView
+                                android:id="@+id/txv_location_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="Parque Panorama"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <!-- Cardview to trips -->
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/event_card_margin"
+                android:backgroundTint="@color/colorBackground"
+                card_view:cardElevation="8dp">
+                <!-- Card content -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- Trip details -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <!-- User -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_marginTop="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/user"/>
+                            <TextView
+                                android:id="@+id/txv_user_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="Usuario guapo"
+                                />
+                        </LinearLayout>
+                        <!-- Date -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/date" />
+                            <TextView
+                                android:id="@+id/txv_date_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="01/Dic/2017" />
+                        </LinearLayout>
+                        <!-- Time -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="4"
+                                android:src="@drawable/time"/>
+                            <TextView
+                                android:id="@+id/txv_time_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="09:00 a.m."
+                                />
+                        </LinearLayout>
+                        <!-- Event location -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="@dimen/event_details_margin">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/location" />
+                            <TextView
+                                android:id="@+id/txv_location_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="Parque Panorama"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <!-- Cardview to trips -->
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/event_card_margin"
+                android:backgroundTint="@color/colorBackground"
+                card_view:cardElevation="8dp">
+                <!-- Card content -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- Trip details -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <!-- User -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_marginTop="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/user"/>
+                            <TextView
+                                android:id="@+id/txv_user_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="Usuario guapo"
+                                />
+                        </LinearLayout>
+                        <!-- Date -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/date" />
+                            <TextView
+                                android:id="@+id/txv_date_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="01/Dic/2017" />
+                        </LinearLayout>
+                        <!-- Time -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="4"
+                                android:src="@drawable/time"/>
+                            <TextView
+                                android:id="@+id/txv_time_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="09:00 a.m."
+                                />
+                        </LinearLayout>
+                        <!-- Event location -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="@dimen/event_details_margin">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/location" />
+                            <TextView
+                                android:id="@+id/txv_location_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="Parque Panorama"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <!-- Cardview to trips -->
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/event_card_margin"
+                android:backgroundTint="@color/colorBackground"
+                card_view:cardElevation="8dp">
+                <!-- Card content -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- Trip details -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <!-- User -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_marginTop="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/user"/>
+                            <TextView
+                                android:id="@+id/txv_user_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="Usuario guapo"
+                                />
+                        </LinearLayout>
+                        <!-- Date -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/date" />
+                            <TextView
+                                android:id="@+id/txv_date_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="01/Dic/2017" />
+                        </LinearLayout>
+                        <!-- Time -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="4"
+                                android:src="@drawable/time"/>
+                            <TextView
+                                android:id="@+id/txv_time_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="09:00 a.m."
+                                />
+                        </LinearLayout>
+                        <!-- Event location -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="@dimen/event_details_margin">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/location" />
+                            <TextView
+                                android:id="@+id/txv_location_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="Parque Panorama"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <!-- Cardview to trips -->
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/event_card_margin"
+                android:backgroundTint="@color/colorBackground"
+                card_view:cardElevation="8dp">
+                <!-- Card content -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- Trip details -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <!-- User -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_marginTop="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/user"/>
+                            <TextView
+                                android:id="@+id/txv_user_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="Usuario guapo"
+                                />
+                        </LinearLayout>
+                        <!-- Date -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/date" />
+                            <TextView
+                                android:id="@+id/txv_date_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="01/Dic/2017" />
+                        </LinearLayout>
+                        <!-- Time -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/event_details_margin"
+                            android:layout_weight="1">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="4"
+                                android:src="@drawable/time"/>
+                            <TextView
+                                android:id="@+id/txv_time_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="09:00 a.m."
+                                />
+                        </LinearLayout>
+                        <!-- Event location -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="@dimen/event_details_margin">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:src="@drawable/location" />
+                            <TextView
+                                android:id="@+id/txv_location_card_trip"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                style="@style/EventCard_Details"
+                                android:text="Parque Panorama"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 </FrameLayout>

@@ -8,4 +8,11 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="profile_width">90dp</dimen>
     <dimen name="profile_height">90dp</dimen>
+    <!-- Event card margins -->
+    <dimen name="event_card_margin">8dp</dimen>
+    <!-- Event details margins -->
+    <dimen name="event_details_margin">5dp</dimen>
+    <!-- Profile margins -->
+    <dimen name="profile_title_margin">10dp</dimen>
+    <dimen name="profile_details_margin">20dp</dimen>
 </resources>

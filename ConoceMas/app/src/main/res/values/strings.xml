@@ -17,14 +17,14 @@
     <string-array name="nav_item_activity_titles">
         <item>Mapa</item>
         <item>Perfil</item>
-        <item>Viajes</item>
+        <item>Tus últimos viajes</item>
         <item>Configuración</item>
         <item>Ayuda</item>
     </string-array>
 
     <string name="log_out">Salir</string>
     <string name="action_logout">Logout</string>
-    <string name="hello_blank_fragment">Holis :3</string>
+    <string name="hello_blank_fragment">Holi, soy un fragmento en blanco :D</string>
     <string name="title_activity_maps">Map</string>
 
     <!-- Help Fragment -->

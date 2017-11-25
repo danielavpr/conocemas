@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import salle.com.conocemas.R;
+import salle.com.conocemas.fragment.MapFragment;
 import salle.com.conocemas.fragment.SettingsFragment;
 import salle.com.conocemas.fragment.HelpFragment;
 import salle.com.conocemas.fragment.ProfileFragment;
@@ -27,7 +28,8 @@ public class MainActivity extends AppCompatActivity implements
     SettingsFragment.OnFragmentInteractionListener,
     HelpFragment.OnFragmentInteractionListener,
     ProfileFragment.OnFragmentInteractionListener,
-    TripsFragment.OnFragmentInteractionListener{
+    TripsFragment.OnFragmentInteractionListener,
+    MapFragment.OnFragmentInteractionListener{
 
     private NavigationView navigationView;
     private DrawerLayout drawer;
@@ -43,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements
     private static final String TAG_SETTINGS = "settings";
     private static final String TAG_HELP = "help";
     public static String CURRENT_TAG = TAG_HOME;
-
     // toolbar titles respected to selected nav menu item
     private String[] activityTitles;
 
@@ -118,6 +119,10 @@ public class MainActivity extends AppCompatActivity implements
 
     private Fragment getHomeFragment() {
         switch (navItemIndex) {
+            case 0:
+                // Map
+                MapFragment mapFragment = new MapFragment();
+                return mapFragment;
             case 1:
                 // Profile
                 ProfileFragment profileFragment = new ProfileFragment();
@@ -135,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements
                 HelpFragment helpFragment = new HelpFragment();
                 return helpFragment;
             default:
-                return new ProfileFragment();
+                return new MapFragment();
         }
     }
 
@@ -159,9 +164,7 @@ public class MainActivity extends AppCompatActivity implements
                     //Replacing the main content with ContentFragment Which is our Inbox View;
                     case R.id.nav_home:
                         navItemIndex = 0;
-                        // launch new intent instead of loading fragment
-                        startActivity(new Intent(MainActivity.this, MapsActivity.class));
-                        drawer.closeDrawers();
+                        CURRENT_TAG = TAG_HOME;
                         return true;
                     case R.id.nav_profile:
                         navItemIndex = 1;
@@ -248,9 +251,9 @@ public class MainActivity extends AppCompatActivity implements
         // Inflate the menu; this adds items to the action bar if it is present.
 
         // show menu only when home fragment is selected
-        if (navItemIndex == 0) {
+        //if (navItemIndex == 0) {
             getMenuInflater().inflate(R.menu.main, menu);
-        }
+        //}
         return true;
     }
 

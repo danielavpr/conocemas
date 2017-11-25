@@ -20,4 +20,15 @@
         <item name="android:textSize">16dp</item>
         <item name="android:color">@color/colorAccent</item>
     </style>
+    <!-- Events Cards -->
+    <style name="EventCard_Title">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="EventCard_Details">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
 </resources>
