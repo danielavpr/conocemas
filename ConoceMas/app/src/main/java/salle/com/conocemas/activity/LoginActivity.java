@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private LoginButton loginButton;
     private CallbackManager callbackManager;
 
-    //private FirebaseAuth firebaseAuth;
+    private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
 
     @Override
@@ -40,8 +40,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) {
 
-                goMainScreen();
-                //handleFacebookAccessToken(loginResult.getAccessToken());
+                //goMainScreen();
+                handleFacebookAccessToken(loginResult.getAccessToken());
             }
 
             @Override
@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        /*firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -64,10 +64,10 @@ public class LoginActivity extends AppCompatActivity {
                     goMainScreen();
                 }
             }
-        };*/
+        };
     }
 
-    /*private void handleFacebookAccessToken(AccessToken accessToken) {
+    private void handleFacebookAccessToken(AccessToken accessToken) {
         AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), R.string.com_facebook_internet_permission_error_message, Toast.LENGTH_LONG).show();
             }
         });
-    }*/
+    }
 
     private void goMainScreen() {
         Intent intent = new Intent(this, MainActivity.class);
@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
         callbackManager.onActivityResult(requestCode,resultCode,data);
     }
 
-    /*@Override
+    @Override
     protected void onStart(){
         super.onStart();
         firebaseAuth.addAuthStateListener(firebaseAuthListener);
@@ -99,6 +99,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStop(){
         super.onStop();
         firebaseAuth.addAuthStateListener(firebaseAuthListener);
-    }*/
+    }
 
 }
