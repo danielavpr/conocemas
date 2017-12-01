@@ -67,11 +67,11 @@ public class MainActivity extends AppCompatActivity implements
 
         setContentView(R.layout.activity_main);
 
-        /*if (AccessToken.getCurrentAccessToken() == null){
+        if (AccessToken.getCurrentAccessToken() == null){
             goLoginScreen();
-        }*/
+        }
 
-        User cUser = new User();
+        /*User cUser = new User();
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if(user != null){
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements
 
         }else{
             goLoginScreen();
-        }
+        }*/
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -302,7 +302,7 @@ public class MainActivity extends AppCompatActivity implements
 
         if (id == R.id.action_logout) {
             Toast.makeText(getApplicationContext(), "Logout user!", Toast.LENGTH_LONG).show();
-            FirebaseAuth.getInstance().signOut();
+            //FirebaseAuth.getInstance().signOut();
             LoginManager.getInstance().logOut();
             goLoginScreen();
             return true;
