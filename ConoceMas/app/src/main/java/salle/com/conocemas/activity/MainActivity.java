@@ -1,7 +1,6 @@
 package salle.com.conocemas.activity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Handler;
 import android.support.design.widget.NavigationView;
@@ -16,13 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
-
-import com.facebook.AccessToken;
-import com.facebook.login.LoginManager;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import salle.com.conocemas.R;
 import salle.com.conocemas.fragment.MapFragment;
@@ -30,7 +23,6 @@ import salle.com.conocemas.fragment.SettingsFragment;
 import salle.com.conocemas.fragment.HelpFragment;
 import salle.com.conocemas.fragment.ProfileFragment;
 import salle.com.conocemas.fragment.TripsFragment;
-import salle.com.conocemas.model.User;
 
 public class MainActivity extends AppCompatActivity implements
     SettingsFragment.OnFragmentInteractionListener,
@@ -63,30 +55,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         setContentView(R.layout.activity_main);
-
-        /*if (AccessToken.getCurrentAccessToken() == null){
-            goLoginScreen();
-        }*/
-
-        User cUser = new User();
-
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if(user != null){
-            String name = user.getDisplayName();
-            String email = user.getEmail();
-            Uri photo = user.getPhotoUrl();
-            String uid = user.getUid();
-
-            cUser.username = name;
-            cUser.useremail = email;
-            cUser.userphoto = photo;
-
-        }else{
-            goLoginScreen();
-        }
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -107,12 +76,6 @@ public class MainActivity extends AppCompatActivity implements
             CURRENT_TAG = TAG_HOME;
             loadHomeFragment();
         }
-    }
-
-    private void goLoginScreen() {
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-        startActivity(intent);
     }
 
     private void loadHomeFragment() {
@@ -294,19 +257,15 @@ public class MainActivity extends AppCompatActivity implements
         return true;
     }
 
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
         if (id == R.id.action_logout) {
             Toast.makeText(getApplicationContext(), "Logout user!", Toast.LENGTH_LONG).show();
-            FirebaseAuth.getInstance().signOut();
-            LoginManager.getInstance().logOut();
-            goLoginScreen();
             return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
 
